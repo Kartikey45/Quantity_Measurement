@@ -68,8 +68,22 @@ namespace Quantity_Measurement_Test
         public void zeroInchAndZeroInchReturnEqual() //TC 1.7
         {
             InchComparision compare = new InchComparision();
-            double result = compare.InchCompare(0.0);
+            double result = compare.InchCompare("0.0");
             Assert.AreEqual(result, 0.0);
+        }
+
+        [Test]
+        public void NullCheckforInchComparision() //TC 1.8
+        {
+            InchComparision compare = new InchComparision();
+            try 
+            {
+                compare.InchCompare(null);
+            }
+            catch(CustomException e)
+            {
+                Assert.AreEqual(CustomException.ExceptionType.INPUT_NULL, e.type);
+            }
         }
     }
 }

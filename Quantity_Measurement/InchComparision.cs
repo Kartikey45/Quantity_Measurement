@@ -6,10 +6,22 @@ namespace Quantity_Measurement
 {
     public class InchComparision
     {
-        public double InchCompare(double inch)
+        public double InchCompare(string input)
         {
+            double inch = 0.0;
             double feet = 0.083;
-            inch = inch * feet;
+
+            if (input != null)
+            {
+                if (double.TryParse(input, out inch))
+                {
+                    inch = inch * feet;
+                }
+            }
+            else 
+            {
+                throw new CustomException(CustomException.ExceptionType.INPUT_NULL, "Null");
+            }
             return inch;
         }
     }
