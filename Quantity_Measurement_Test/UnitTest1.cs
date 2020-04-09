@@ -192,5 +192,65 @@ namespace Quantity_Measurement_Test
             double result2 = compare2.InchCompare("12");
             Assert.AreEqual(result2, result1);
         }
+
+        [Test]
+        public void ThreeFeetEqualTo1Yard()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            FeetComparision compare2 = new FeetComparision();
+            double result2 = compare2.feetcompare("3");
+            Assert.AreEqual(result,result2);
+        }
+
+        [Test]
+        public void OneFeetNotEqualTo1Yard()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            FeetComparision compare2 = new FeetComparision();
+            double result2 = compare2.feetcompare("1");
+            Assert.AreNotEqual(result, result2);
+        }
+
+        [Test]
+        public void OneInchNotEqualTo1Yard()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("1");
+            Assert.AreNotEqual(result, result2);
+        }
+
+        [Test]
+        public void OneYadEqualTo36Inch()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("36");
+            Assert.AreEqual(result, result2);
+        }
+
+        [Test]
+        public void ThirtySixInchEqualTo1Yard()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("36");
+            Assert.AreEqual(result2, result);
+        }
+
+        [Test]
+        public void OneYardEqualTo3Feet()
+        {
+            YardComparision compare = new YardComparision();
+            double result = compare.yardCompare("1");
+            FeetComparision compare2 = new FeetComparision();
+            double result2 = compare2.feetcompare("3");
+            Assert.AreEqual(result, result2);
+        }
     }
 }
