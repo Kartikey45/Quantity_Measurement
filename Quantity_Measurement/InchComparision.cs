@@ -8,14 +8,14 @@ namespace Quantity_Measurement
     {
         public double InchCompare(string input)
         {
-            double inch = 0.0;
-            double feet = 0.083;
+            double inch = 1;
+            double feet = 12;
 
             if (input != null)
             {
                 if (double.TryParse(input, out inch))
                 {
-                    inch = inch * feet;
+                    inch = inch / feet;
                 }
                 else
                 {

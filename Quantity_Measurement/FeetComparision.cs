@@ -7,19 +7,18 @@ namespace Quantity_Measurement
     public class FeetComparision
     {
         // Calulate and compare units 
-        public int feetcompare(string input)
+        public double feetcompare(string input)
         {
-            int feet = 0;
-            int inch = 12;
-            //feet = feet * inch;
+            double feet = 1;
+            double inch = 12;
 
             if (input != null)
             {
 
-                if (int.TryParse(input, out feet))
+                if (double.TryParse(input, out feet))
                 {
-
-                    feet = feet * inch;
+                    if(feet == inch)
+                        feet = feet * inch;
                 }
                 else
                 {

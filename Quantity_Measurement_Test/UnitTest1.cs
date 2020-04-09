@@ -9,7 +9,7 @@ namespace Quantity_Measurement_Test
         public void Test1()  //TC 1.1
         {
             FeetComparision compare = new FeetComparision();
-            int result = compare.feetcompare("0");
+            double result = compare.feetcompare("0");
             Assert.AreEqual(0, result);
         }
 
@@ -40,7 +40,18 @@ namespace Quantity_Measurement_Test
         }
 
         [Test]
-        public void TypeCheck() //TC 1.4
+        public void Test4() //TC 1.4
+        {
+            FeetComparision compare = new FeetComparision();
+            compare.feetcompare("0");
+            FeetComparision compar2 = new FeetComparision();
+            compar2.feetcompare("0");
+            bool areEqual = ReferenceEquals(compare, compar2);
+            Assert.IsFalse(areEqual);
+        }
+
+        [Test]
+        public void TypeCheck() //TC 1.5
         {
             FeetComparision compare = new FeetComparision();
             try
@@ -54,7 +65,7 @@ namespace Quantity_Measurement_Test
         }
 
         [Test]
-        public void EqualityCheck() //TC 1.5 & TC 1.6 
+        public void EqualityCheck() //TC 1.6 
         {
             FeetComparision compare = new FeetComparision();
             compare.feetcompare("0");
@@ -136,10 +147,50 @@ namespace Quantity_Measurement_Test
         public void zeroFeetAndZeroInchReturnsEqual() //TC 1.13
         {
             FeetComparision compare = new FeetComparision();
-            int result1 = compare.feetcompare("0");
+            double result1 = compare.feetcompare("0");
             InchComparision compare2 = new InchComparision();
             double result2 = compare2.InchCompare("0.0");
             Assert.AreEqual(result1,result2);
+        }
+
+        [Test]
+        public void oneFeetNotEqualToOneInch() // TC 1.14
+        {
+            FeetComparision compare = new FeetComparision();
+            double result1 = compare.feetcompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("1.0");
+            Assert.AreNotEqual(result1, result2);
+        }
+
+        [Test]
+        public void oneInchNotEqualToOneFeet() // TC 1.15
+        {
+            FeetComparision compare = new FeetComparision();
+            double result1 = compare.feetcompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("1.0");
+            Assert.AreNotEqual(result1, result2);
+        }
+
+        [Test]
+        public void oneFeetEqualTo12Inch() //TC 1.16
+        {
+            FeetComparision compare = new FeetComparision();
+            double result1 = compare.feetcompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("12");
+            Assert.AreEqual(result1, result2);
+        }
+
+        [Test]
+        public void twelveInchEqualToOneInch()
+        {
+            FeetComparision compare = new FeetComparision();
+            double result1 = compare.feetcompare("1");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("12");
+            Assert.AreEqual(result2, result1);
         }
     }
 }
