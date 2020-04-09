@@ -17,6 +17,10 @@ namespace Quantity_Measurement
                 {
                     inch = inch * feet;
                 }
+                else
+                {
+                    throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Type not match");
+                }
             }
             else 
             {

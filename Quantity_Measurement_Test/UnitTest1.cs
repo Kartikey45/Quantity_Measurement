@@ -85,5 +85,51 @@ namespace Quantity_Measurement_Test
                 Assert.AreEqual(CustomException.ExceptionType.INPUT_NULL, e.type);
             }
         }
+
+        [Test]
+        public void RefCheckforInchComparision() // TC 1.9
+        {
+            InchComparision compare = new InchComparision();
+            compare.InchCompare("0.0");
+            InchComparision compare2 = new InchComparision();
+            compare2.InchCompare("0.0");
+            compare = compare2;
+            bool AreEqual = ReferenceEquals(compare,compare2);
+            Assert.IsTrue(AreEqual);
+        }
+
+        [Test]
+        public void RefCheckforInchComparisionReturnFalse() // TC 1.10 
+        {
+            InchComparision compare = new InchComparision();
+            compare.InchCompare("0.0");
+            InchComparision compare2 = new InchComparision();
+            compare2.InchCompare("0.0");
+            bool AreEqual = ReferenceEquals(compare,compare2);
+            Assert.IsFalse(AreEqual);
+        }
+
+        [Test]
+        public void TypeCheckforInchComparision() // TC 1.11
+        {
+            InchComparision compare = new InchComparision();
+            try
+            {
+                compare.InchCompare("");
+            }
+            catch(CustomException e)
+            {
+                Assert.AreEqual(CustomException.ExceptionType.TYPE_NOT_MATCH, e.type);
+            }
+        }
+
+        [Test]
+        public void EqualityCheckforInchComparision() //Tc 1.12
+        {
+            InchComparision compare = new InchComparision();
+            InchComparision compare2 = new InchComparision();
+            bool isEqual = ReferenceEquals(compare.GetType(),compare2.GetType());
+            Assert.IsTrue(isEqual);
+        }
     }
 }
