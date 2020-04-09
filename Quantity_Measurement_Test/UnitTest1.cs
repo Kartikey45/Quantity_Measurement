@@ -69,7 +69,7 @@ namespace Quantity_Measurement_Test
         {
             InchComparision compare = new InchComparision();
             double result = compare.InchCompare(0.0);
-            Assert.AreEqual(0.0,result);
+            Assert.AreEqual(result, 0.0);
         }
     }
 }
