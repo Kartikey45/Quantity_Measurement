@@ -1,7 +1,7 @@
 using NUnit.Framework;
-using Quantity_measurement_problem;
+using Quantity_Measurement;
 
-namespace Quantity_measurement_problem_Test
+namespace Quantity_Measurement_Test
 {
     public class Tests
     {
@@ -62,6 +62,14 @@ namespace Quantity_measurement_problem_Test
             compare2.feetcompare("0");
             bool IsEqual = ReferenceEquals(compare.GetType(), compare2.GetType());
             Assert.IsTrue(IsEqual);
+        }
+
+        [Test]
+        public void zeroInchAndZeroInchReturnEqual() //TC 1.7
+        {
+            InchComparision compare = new InchComparision();
+            double result = compare.InchCompare(0.0);
+            Assert.AreEqual(0.0,result);
         }
     }
 }

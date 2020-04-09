@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Quantity_measurement_problem
+namespace Quantity_Measurement
 {
     public class FeetComparision
     {
