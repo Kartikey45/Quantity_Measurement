@@ -53,5 +53,15 @@ namespace Quantity_measurement_problem_Test
             }
         }
 
+        [Test]
+        public void EqualityCheck() //TC 1.5 & TC 1.6 
+        {
+            FeetComparision compare = new FeetComparision();
+            compare.feetcompare("0");
+            FeetComparision compare2 = new FeetComparision();
+            compare2.feetcompare("0");
+            bool IsEqual = ReferenceEquals(compare.GetType(), compare2.GetType());
+            Assert.IsTrue(IsEqual);
+        }
     }
 }
