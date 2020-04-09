@@ -131,5 +131,15 @@ namespace Quantity_Measurement_Test
             bool isEqual = ReferenceEquals(compare.GetType(),compare2.GetType());
             Assert.IsTrue(isEqual);
         }
+
+        [Test]
+        public void zeroFeetAndZeroInchReturnsEqual() //TC 1.13
+        {
+            FeetComparision compare = new FeetComparision();
+            int result1 = compare.feetcompare("0");
+            InchComparision compare2 = new InchComparision();
+            double result2 = compare2.InchCompare("0.0");
+            Assert.AreEqual(result1,result2);
+        }
     }
 }
