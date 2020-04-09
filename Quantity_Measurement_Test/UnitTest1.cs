@@ -38,5 +38,20 @@ namespace Quantity_measurement_problem_Test
             bool areEqual = ReferenceEquals(compare, compar2);
             Assert.IsTrue(areEqual);
         }
+
+        [Test]
+        public void TypeCheck() //TC 1.4
+        {
+            FeetComparision compare = new FeetComparision();
+            try
+            {
+                compare.feetcompare("");
+            }
+            catch (CustomException e)
+            {
+                Assert.AreEqual(CustomException.ExceptionType.TYPE_NOT_MATCH, e.type);
+            }
+        }
+
     }
 }

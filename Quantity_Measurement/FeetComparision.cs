@@ -20,8 +20,10 @@ namespace Quantity_measurement_problem
                 {
 
                     feet = feet * inch;
-                    //return feet;
-
+                }
+                else
+                {
+                    throw new CustomException(CustomException.ExceptionType.TYPE_NOT_MATCH, "Type not match");
                 }
             }
             else
