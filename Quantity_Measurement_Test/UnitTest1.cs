@@ -252,5 +252,13 @@ namespace Quantity_Measurement_Test
             double result2 = compare2.feetcompare("3");
             Assert.AreEqual(result, result2);
         }
+
+        [Test]
+        public void InchEqualToCentimeter()
+        {
+            InchToCentimeter inchToCentimeter = new InchToCentimeter();
+            double result = inchToCentimeter.centimeterCompare("2");
+            Assert.AreEqual(result,5);
+        }
     }
 }
