@@ -254,11 +254,43 @@ namespace Quantity_Measurement_Test
         }
 
         [Test]
-        public void InchEqualToCentimeter()
+        public void InchEqualToCentimeter() //UC 3 Compare lengths Inch to Centimeter
         {
             InchToCentimeter inchToCentimeter = new InchToCentimeter();
             double result = inchToCentimeter.centimeterCompare("2");
             Assert.AreEqual(result,5);
+        }
+
+        [Test]
+        public void InchAndInchAddition() //UC 4 Add two length in inches
+        {
+            AddTwoLengthsInInches addTwoLengths = new AddTwoLengthsInInches();
+            double result = addTwoLengths.InchPlusInch(2,2);
+            Assert.AreEqual(4, result);
+        }
+
+        [Test]
+        public void InchAndFeetAddition() //UC 4 Add two length in inches
+        {
+            AddTwoLengthsInInches addTwoLengths = new AddTwoLengthsInInches();
+            double result = addTwoLengths.FeetPlusInch(2);
+            Assert.AreEqual(14, result);
+        }
+
+        [Test]
+        public void FeetAndFeetAddition() //UC 4 Add two length in inches
+        {
+            AddTwoLengthsInInches addTwoLengths = new AddTwoLengthsInInches();
+            double result = addTwoLengths.FeetPlusFeet();
+            Assert.AreEqual(24, result);
+        }
+
+        [Test]
+        public void InchAndCentimeterAddition() //UC 4 Add two length in inches
+        {
+            AddTwoLengthsInInches addTwoLengths = new AddTwoLengthsInInches();
+            double result = addTwoLengths.CentimeterPlusInch(2);
+            Assert.AreEqual(3, result);
         }
     }
 }
