@@ -324,5 +324,13 @@ namespace Quantity_Measurement_Test
             double result = WeightsInGram.gramToKg("1000") + WeightsInGram.TonneTokg("1");
             Assert.AreEqual(1001, result);
         }
+
+        [Test]
+        public void TempratureCalculate()
+        {
+            TempratureInFehrenheitAndCelsius fehrenheitAndCelsius = new TempratureInFehrenheitAndCelsius();
+            double result = fehrenheitAndCelsius.Temprature(212);
+            Assert.AreEqual(result,100);
+        }
     }
 }
