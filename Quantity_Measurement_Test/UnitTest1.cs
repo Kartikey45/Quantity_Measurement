@@ -292,5 +292,13 @@ namespace Quantity_Measurement_Test
             double result = addTwoLengths.CentimeterPlusInch(2);
             Assert.AreEqual(3, result);
         }
+
+        [Test]
+        public void VolumeCompare()
+        {
+            VolumeConvert convert = new VolumeConvert();
+            double result = convert.gallonToLitre(1);
+            Assert.AreEqual(3.78, result);
+        }
     }
 }
