@@ -37,5 +37,19 @@ namespace Quantity_Measurement
             }
             return miliLitre;
         }
+
+        public double AddGallonInLitre(double Litre)
+        {
+            VolumeConvert convert = new VolumeConvert();
+            Litre = convert.gallonToLitre(1) + Litre;
+            return Litre;
+        }
+
+        public double AddMililitreInLitre(double Litre)
+        {
+            VolumeConvert convert = new VolumeConvert();
+            Litre = Litre + convert.mililitreToLitre("1000");
+            return Litre;
+        }
     }
 }

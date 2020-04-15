@@ -294,11 +294,27 @@ namespace Quantity_Measurement_Test
         }
 
         [Test]
-        public void VolumeCompare()
+        public void VolumeCompare() //UC 5 Compare volume in litre and gallon
         {
             VolumeConvert convert = new VolumeConvert();
             double result = convert.gallonToLitre(1);
             Assert.AreEqual(3.78, result);
+        }
+
+        [Test]
+        public void gallonPlusLitre() //UC 6 Add two Volumes
+        {
+            VolumeConvert convert = new VolumeConvert();
+            double result = convert.AddGallonInLitre(3.78);
+            Assert.AreEqual(7.56, result);
+        }
+
+        [Test]
+        public void LitrePlusMililitre() //UC 6 Add two volumes
+        {
+            VolumeConvert convert = new VolumeConvert();
+            double result = convert.AddMililitreInLitre(1);
+            Assert.AreEqual(2, result);
         }
     }
 }
