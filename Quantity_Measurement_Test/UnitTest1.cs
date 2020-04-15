@@ -316,5 +316,13 @@ namespace Quantity_Measurement_Test
             double result = convert.AddMililitreInLitre(1);
             Assert.AreEqual(2, result);
         }
+
+        [Test]
+        public void AddWeightInGram() // UC 7 Add weights in grams
+        {
+            CompareAndAddWeightsInGram WeightsInGram = new CompareAndAddWeightsInGram();
+            double result = WeightsInGram.gramToKg("1000") + WeightsInGram.TonneTokg("1");
+            Assert.AreEqual(1001, result);
+        }
     }
 }
