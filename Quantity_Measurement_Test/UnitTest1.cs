@@ -326,11 +326,19 @@ namespace Quantity_Measurement_Test
         }
 
         [Test]
-        public void TempratureCalculate()
+        public void FehrenheightToCelsius() // UC 8 Fehrenheit to celsius convert
         {
-            TempratureInFehrenheitAndCelsius fehrenheitAndCelsius = new TempratureInFehrenheitAndCelsius();
-            double result = fehrenheitAndCelsius.Temprature(212);
+            TempratureInFehrenheitAndCelsius fehrenheitToCelsius = new TempratureInFehrenheitAndCelsius();
+            double result = fehrenheitToCelsius.FehrenheightToCelsiusConversion(212);
             Assert.AreEqual(result,100);
+        }
+
+        [Test]
+        public void CelsiusToFehrenheight() // UC 8 Celsius to fehrenheit convert
+        {
+            TempratureInFehrenheitAndCelsius celsiusToFehrenheight = new TempratureInFehrenheitAndCelsius();
+            double result = celsiusToFehrenheight.CelsiusToFehrenheightConversion(100);
+            Assert.AreEqual(result, 212);
         }
     }
 }
